@@ -1,7 +1,6 @@
 package com.caballero.hp_alm_client;
 
 import com.caballero.hp_alm_client.model.*;
-import disney.hp_alm_client.model.*;
 import com.caballero.hp_alm_client.utils.Config;
 import com.caballero.hp_alm_client.utils.HpAlmClient;
 

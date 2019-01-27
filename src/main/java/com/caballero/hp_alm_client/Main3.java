@@ -1,6 +1,7 @@
 package com.caballero.hp_alm_client;
 
 import com.caballero.hp_alm_client.utils.ExcelReportProcessor;
+import com.caballero.hp_alm_client.utils.ReportConfiguration;
 import com.caballero.hp_alm_client.utils.ReportProcessor;
 
 import java.io.IOException;
@@ -27,7 +28,9 @@ public class Main3 {
 
         ReportProcessor reportProcessor = new ExcelReportProcessor();
 
-        reportProcessor.processReport(report, executionName, testSetFolderId);
+        ReportConfiguration reportConfiguration = new ReportConfiguration(0, 3);
+
+        reportProcessor.processReport(report, executionName, testSetFolderId, reportConfiguration);
 
     }
 

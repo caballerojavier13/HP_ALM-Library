@@ -19,6 +19,9 @@ public class Entity {
     @XmlAttribute(name = "Type", required = true)
     private String type;
 
+    @XmlElement(name = "RelatedEntities")
+    private String relatedEntities;
+
     public Entity() {
 
     }

@@ -15,7 +15,7 @@ import java.util.Date;
 
 public class ExcelReportProcessor implements ReportProcessor {
     @Override
-    public void processReport(String reportPath, String executionName, String testSetFolderId) throws IOException {
+    public void processReport(String reportPath, String executionName, String testSetFolderId, ReportConfiguration reportConfiguration) throws IOException {
 
         SimpleDateFormat formatTestSetDate = new SimpleDateFormat("yyyy-MM-dd");
 
@@ -41,8 +41,8 @@ public class ExcelReportProcessor implements ReportProcessor {
             // for every row in the report, it's mean for every test case executed
             for (Row row : workbook.getSheetAt(0)) {
 
-                String testId = row.getCell(0).getStringCellValue();
-                String testStatus = row.getCell(3).getStringCellValue();
+                String testId = row.getCell(reportConfiguration.getTestIdIndexColumn()).getStringCellValue();
+                String testStatus = row.getCell(reportConfiguration.getTestStatusIndexColumn()).getStringCellValue();
 
                 TestInstance testInstance = new TestInstance();
                 testInstance.testSetId(testSet.id());

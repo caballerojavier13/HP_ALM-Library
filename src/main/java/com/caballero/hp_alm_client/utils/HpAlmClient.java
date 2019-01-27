@@ -3,7 +3,6 @@ package com.caballero.hp_alm_client.utils;
 import com.caballero.hp_alm_client.model.*;
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.exceptions.UnirestException;
-import disney.hp_alm_client.model.*;
 import sun.misc.BASE64Encoder;
 
 import javax.ws.rs.core.*;
@@ -112,7 +111,6 @@ public class HpAlmClient {
             Entity entity = response.readEntity(Entity.class);
 
             return new TestSet(entity);
-
         } else {
             throw new ResponseException(response, url);
         }
